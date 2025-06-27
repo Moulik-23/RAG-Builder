@@ -105,10 +105,11 @@ rag-builder/
 
 ## 📸 Screenshots
 
-| Dashboard                               | Chat Interface                |
+| Dashboard                              
 | --------------------------------------- | ----------------------------- |
-| ![dashboard]![Screenshot 2025-06-27 233007](https://github.com/user-attachments/assets/827a5d10-6d43-47b0-b8e6-bbbfd7eee4f2)
-| ![chat] ![Screenshot 2025-06-27 235551](https://github.com/user-attachments/assets/669c0d40-db50-433c-ad72-af4757d177b0)
+| [Screenshot 2025-06-27 233007](https://github.com/user-attachments/assets/827a5d10-6d43-47b0-b8e6-bbbfd7eee4f2)
+| Chat Interface                |
+| ![Screenshot 2025-06-27 235551](https://github.com/user-attachments/assets/669c0d40-db50-433c-ad72-af4757d177b0)
 
 
 ---
