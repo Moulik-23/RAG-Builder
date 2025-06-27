@@ -1,0 +1,66 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document-Based RAG Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2>RAG Builder</h2>
+      <ul class="nav-links">
+        <li><a href="#">📁 My Projects</a></li>
+        <li><a href="#">🆕 Create New RAG</a></li>
+        <li><a href="#">🚪 Logout</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="top-bar">
+        <h1>Welcome, <span class="username">User</span>!</h1>
+        <button class="create-btn">📄 Create with Documents</button>
+      </div>
+
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <h2>📄 Upload Document to Create RAG Project</h2>
+        <input type="text" id="projectName" placeholder="Enter Project Name" class="text-input" />
+        <input type="file" id="docFile" />
+        <button id="uploadBtn">Upload</button>
+        <div id="loadingOverlay" style="display:none">Uploading...</div>
+        <div id="toast" class="toast"></div>
+      </div>
+
+      <!-- Projects Table -->
+      <div class="table-section">
+        <h2>📁 My Projects</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>⚙️</th>
+            </tr>
+          </thead>
+          <tbody id="projectsTableBody">
+            <!-- Rows injected dynamically -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <script src="upload_script.js"></script>
+</body>
+</html>

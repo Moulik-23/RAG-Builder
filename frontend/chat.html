@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Chat</title>
+    <link rel="stylesheet" href="chat.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="chat-container">
+      <header class="chat-header">
+        <h2>💬 Chat with RAG App</h2>
+        <p id="chat-project-name"></p>
+      </header>
+
+      <div id="chat-window" class="chat-window">
+        <!-- Messages will appear here -->
+      </div>
+
+      <div class="chat-input">
+        <input type="text" id="chatInput" placeholder="Ask your question..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+
+    <script src="chat.js"></script>
+  </body>
+</html>

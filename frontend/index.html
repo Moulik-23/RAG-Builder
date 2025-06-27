@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAG Builder - Home</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Firebase scripts -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+      import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBFCuZsJ8D81Z8Dd0eK2WL-6tQtvGTy61Q",
+        authDomain: "rag-builder-530e0.firebaseapp.com",
+        projectId: "rag-builder-530e0",
+        storageBucket: "rag-builder-530e0.firebasestorage.app",
+        messagingSenderId: "297329401187",
+        appId: "1:297329401187:web:9bc6087fab17bc12a58756",
+        measurementId: "G-9KFEYEG5T4",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Check auth status
+      onAuthStateChanged(auth, (user) => {
+        if (!user) {
+          // Redirect to login
+          window.location.href = "signup.html";
+        }
+      });
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <div class="nav-logo">RAG Builder</div>
+      <div class="nav-links">
+        <a href="#">About Us</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </nav>
+
+    <div class="content">
+      <h1>Welcome to <span style="color: #61dafb">RAG Builder</span></h1>
+      <p class="subtitle">
+        Select how you'd like to create your RAG application
+      </p>
+      <div class="buttons">
+        <button class="btn" onclick="window.location.href='dashboard.html'">
+          📄 Document Upload
+        </button>
+        <button class="btn" onclick="window.location.href='webscrape.html'">
+          🌐 Web Scraping
+        </button>
+      </div>
+    </div>
+
+    <!-- VANTA Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "body",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: 0x888888,
+        backgroundColor: 0x000000,
+      });
+    </script>
+
+    <!-- Logout functionality -->
+    <script type="module">
+      import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+      const auth = getAuth();
+      const logoutBtn = document.getElementById("logoutBtn");
+
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+          signOut(auth)
+            .then(() => {
+              window.location.href = "signup.html";
+            })
+            .catch((error) => {
+              alert("Error signing out: " + error.message);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
