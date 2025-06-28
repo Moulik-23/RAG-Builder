@@ -32,7 +32,7 @@ async def chat(req: ChatRequest):
         vectorstore = FAISS.load_local(vector_path, embeddings,allow_dangerous_deserialization=True)
 
         retriever = vectorstore.as_retriever()
-        llm = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct",api_key="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")
+        llm = ChatGroq(model="meta-llama/llama-4-scout-17b-16e-instruct",api_key="your_api_key")
         qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
 
         answer = qa.run(req.query)
